@@ -23,13 +23,13 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: example.com/nfs
+              value: jmlabs.net/nfs
             - name: NFS_SERVER
-              value: <<NFS Server IP>>
+              value: 192.168.1.17
             - name: NFS_PATH
-              value: /srv/nfs/kubedata
+              value: /nfs/kubedata
       volumes:
         - name: nfs-client-root
           nfs:
-            server: <<NFS Server IP>>
-            path: /srv/nfs/kubedata
+            server: 192.168.1.17
+            path: /nfs/kubedata
